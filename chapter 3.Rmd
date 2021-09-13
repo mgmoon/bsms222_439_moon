@@ -268,4 +268,49 @@ my_func <- function(y){
 }
 # ans:5
 ```
-7. Write a function compute_s_n that for any given n computes the sum
+7. Write a function compute_s_n that for any given n computes the sum $S_n = 1^2 + 2^2 + 3^2 + \dots n^2$.Report the value of the sum when $n=10$.
+```{r}
+compute_s_n<- function(n){
+  x<-1:n
+  sum(x^2)
+}
+compute_s_n(10)
+```
+8. Define an empty numerical vector s_n of size 25 using s_n <- vector("numeric", 25) and store in the results of $S_1, S_2, \dots S_{25}$ using a for-loop.
+```{r}
+s_n<-vector("numeric",25)
+for(n in 1:25){
+  s_n[n]<- compute_s_n(n)
+}
+s_n
+```
+
+9. Repeat exercise 8, but this time use sapply.
+```{r}
+s_n<-vector("numeric",25)
+n<-1:25
+s_n<-sapply(n, compute_s_n)
+s_n
+```
+10. Repeat exercise 8, but this time use map_dbl.
+```{r}
+s_n<-vector("numeric",25)
+s_n<-1:25
+map_dbl(s_n,compute_s_n)
+```
+11. Plot $S_n$ versus n. Use points defined by $n=1,\dots,25$.
+```{r}
+s_n<-vector("numeric",25)
+n<-1:25
+s_n<-sapply(n, compute_s_n)
+plot(n,s_n)
+```
+12. Confirm that the formula for this sum is $S_n= n(n+1)(2n+1)/6$.
+```{r}
+n<-1:25
+s_n <- n*(n+1)*(2*n+1)/6
+plot(n,s_n)
+# 위의 11번 그래프와 같음.
+```
+
+
