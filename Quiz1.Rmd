@@ -1,0 +1,45 @@
+---
+title: "ASD Quiz"
+output: html_notebook
+---
+```{r}
+library(tidyverse)
+d = rio::import('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6015533/bin/NIHMS957592-supplement-1.xlsx')
+```
+
+# Effect groups of ASD patients
+```{r}
+d %>%
+  filter(ASD %in% c("Y", "Maybe")) %>%
+  group_by(Effect) %>%
+  count()
+```
+: ASD 환자들의 경우 6 종의 effect group이 존재함.
+
+# Effect groups of non-ASD patients
+```{r}
+d %>%
+  filter(ASD %in% c("N", "Probably not")) %>%
+  group_by(Effect) %>%
+  count()
+```
+: non-ASD 환자들의 경우 4종의 effect group이 존재함.
+
+# Base 패키지 사용
+Quiz에서 tidyverse 패키지를 사용하라고 하셨지만, 풀다가 base패키지에 있는 함수도 이용해서 할 수 있을 것 같아 마지막에 넣어봅니다...
+```{r}
+# Case of ASD
+d %>%
+  filter(ASD %in% c("Y", "Maybe")) %>%
+  distinct(Effect)%>%
+  count()
+```
+
+```{r}
+# Case of non-ASD
+d %>%
+  filter(ASD %in% c("N", "Probably not")) %>%
+  distinct(Effect)%>%
+  count()
+```
+
