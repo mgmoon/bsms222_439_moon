@@ -261,7 +261,4 @@ d %>% filter(ASD %in% c("Y", "Maybe")) %>%
   group_by(Inheritence, PatientSex) %>%
   count()
 ```
-```{html}
-<img src="https://github.com/mgmoon/bsms222_439_moon/blob/main/graph.PNG">
-```
 
