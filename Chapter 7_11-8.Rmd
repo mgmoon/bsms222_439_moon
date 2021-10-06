@@ -364,9 +364,12 @@ With the right argument, ggplot automatically shades the intersecting region wit
 1. In the murders dataset, the region is a categorical variable and the following is its distribution:
 
 To the closest 5%, what proportion of the states are in the North Central region?
+
+
 ```{r}
 #ans: 20%
 ```
+
 
 2. Which of the following is true:
 
@@ -375,9 +378,12 @@ To the closest 5%, what proportion of the states are in the North Central region
   c. Categories are not numbers, so it does not make sense to graph the distribution.
   d. The colors, not the height of the bars, describe the distribution.
   
+  
+  
 ```{r}
 #ans: b
 ```
+
 
 3. The plot below shows the eCDF for male heights:
 Based on the plot, what percentage of males are shorter than 75 inches?
@@ -386,9 +392,11 @@ Based on the plot, what percentage of males are shorter than 75 inches?
   b. 95%
   c. 80%
   d. 72 inches
+  
 ```{r}
 #ans:b
 ```
+
 
 4. To the closest inch, what height m has the property that 1/2 of the male students are taller than m and 1/2 are shorter?
 
@@ -396,9 +404,12 @@ Based on the plot, what percentage of males are shorter than 75 inches?
   b. 64 inches
   c. 69 inches
   d. 74 inches
+  
+  
 ```{r}
 #ans: c
 ```
+
 
 5. Here is an eCDF of the murder rates across states:
 
@@ -408,9 +419,12 @@ Knowing that there are 51 states (counting DC) and based on this plot, how many 
   b. 5
   c. 10
   d. 50
+  
+  
 ```{r}
 #ans: a
 ```
+
 
 6. Based on the eCDF above, which of the following statements are true:
 
@@ -419,9 +433,11 @@ Knowing that there are 51 states (counting DC) and based on this plot, how many 
   c. All the states have murder rates above 2 per 100,000.
   d. With the exception of 4 states, the murder rates are below 5 per 100,000.
   
+  
 ```{r}
 #ans: d
 ```
+
 
 7. Below is a histogram of male heights in our heights dataset:
 
@@ -431,9 +447,12 @@ Based on this plot, how many males are between 63.5 and 65.5?
   b. 24
   c. 34
   d. 100
+  
+  
 ```{r}
 # ans: c
 ```
+
 
 8. About what percentage are shorter than 60 inches?
 
@@ -442,9 +461,11 @@ Based on this plot, how many males are between 63.5 and 65.5?
   c. 25%
   d. 50%
 
+
 ```{r}
 #ans: a
 ```
+
 
 9. Based on the density plot below, about what proportion of US states have populations larger than 10 million?
   a. 0.02
@@ -452,9 +473,11 @@ Based on this plot, how many males are between 63.5 and 65.5?
   c. 0.50
   d. 0.55
   
+  
 ```{r}
 #ans: b
 ```
+
 
 10. Below are three density plots. Is it possible that they are from the same dataset?
 
@@ -465,9 +488,11 @@ Which of the following statements is true:
   c. They are the same dataset, but the first and second plot undersmooth and the third oversmooths.
   d. They are the same dataset, but the first is not in the log scale, the second undersmooths, and the third oversmooths.
 
+
 ```{r}
 #ans: d
 ```
+
 
 ## 8.8 The normal distribution
 Histograms and density plots provide excellent summaries of a distribution. But can we summarize even further? We often see the average and standard deviation used as summary statistics: a two-number summary! To understand what these summaries are and why they are so widely used, we need to understand the normal distribution.
@@ -681,6 +706,7 @@ How many measurements do we have for each?
 ```{r}
 length(male)
 length(female)
+
 ##ans: male: 812, female: 238
 ```
 2. Suppose we can’t make a plot and want to compare the distributions side by side. We can’t just list all the numbers. Instead, we will look at the percentiles. Create a five row table showing female_percentiles and male_percentiles with the 10th, 30th, 50th, 70th, & 90th percentiles for each sex. Then create a data frame with these two as columns.
@@ -694,22 +720,28 @@ data.frame(female_percentile, male_percentile)
 
 Which continent has the country with the biggest population size?
 
+
 ```{r}
 # ans: Asia
 ```
 
+
 4. What continent has the largest median population size?
+
 
 ```{r}
 #ans: Africa
 ```
 
 
+
 5. What is median population size for Africa to the nearest million?
+
 
 ```{r}
 #ans: 10 million
 ```
+
 
 6. What proportion of countries in Europe have populations below 14 million?
   a. 0.99
@@ -717,14 +749,19 @@ Which continent has the country with the biggest population size?
   c. 0.50
   d. 0.25
   
+  
 ```{r}
 #ans: b
 ```
 
+
 7. If we use a log transformation, which continent shown above has the largest interquartile range?
+
+
 ```{r}
 #ans: America
 ```
+
 
 8. Load the height data set and create a vector x with just the male heights:
 ```{r}
@@ -784,9 +821,11 @@ q<-round(p*10^9)
   c. As seen in question 10, the normal approximation tends to underestimate the extreme values. It’s possible that there are more seven footers than we predicted.
   d. As seen in question 10, the normal approximation tends to overestimate the extreme values. It’s possible that there are fewer seven footers than we predicted.
   
+
 ```{r}
 #ans: c
 ```
+
 
 ## 8.16 ggplot2 geometries
 
